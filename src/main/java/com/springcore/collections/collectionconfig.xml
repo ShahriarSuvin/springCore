@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="
+ http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean class="com.springcore.collections.Employee" name="emp1">
+		<property name="name" value="Suvin" />
+
+		<property name="phones">
+
+			<!-- if there is only one element then i don't need to declare "list" property! 
+				just <prpperty name="" value="" the ioc container is enough smart to understand 
+				it/> we can make a empty list by nothing to declare in a list-->
+			<list>
+				<value>01675</value>
+				<value>8200</value>
+				<value>4191</value>
+			</list>
+		</property>
+		<property name="address">
+		<!-- if there is only one element then i don't need to declare "set" property! 
+				just <prpperty name="" value="" the ioc container is enough smart to understand 
+				it/> we can make a empty set by nothing to declare in a set-->
+			<set>
+				<value>Dhaka</value>
+				<value>Kishoregonj</value>
+				<value>Choto Katara</value>
+			</set>
+		</property>
+		<property name="courses">
+			<map>
+				<entry key="java" value="3monh" />
+				<entry key="angular" value="2monh" />
+				<entry key="spring" value="2monh" />
+			</map>
+		</property>
+		<property name="props">
+			<props>
+				<prop key="name">Oracle DB</prop>
+				<prop key="tableName">Employee</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>
